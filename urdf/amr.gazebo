@@ -1,0 +1,103 @@
+<?xml version="1.0" ?>
+<robot name="amr" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="body_color" value="Gazebo/Silver" />
+
+<ros2_control name="SwerveControl" type="system">
+    <hardware>
+        <plugin>mock_components/GenericSystem</plugin>
+    </hardware>
+    <joint name="a1_bl">
+        <command_interface name="position">
+            <param name="min">-100</param>
+            <param name="max">100</param>
+        </command_interface>
+        
+        <state_interface name="position">
+        <param name="initial_value">0.0</param> 
+        </state_interface>
+    </joint>
+    <joint name="a2_bl">
+        <command_interface name="position">
+            <param name="min">-100</param>
+            <param name="max">100</param>
+        </command_interface>
+        
+        <state_interface name="position">
+        <param name="initial_value">0.0</param> 
+        </state_interface>
+    </joint>
+    <joint name="a3_bl">
+        <command_interface name="position">
+            <param name="min">-100</param>
+            <param name="max">100</param>
+        </command_interface>
+        
+        <state_interface name="position">
+        <param name="initial_value">0.0</param> 
+        </state_interface>
+    </joint>
+    <joint name="a4_bl">
+        <command_interface name="position">
+            <param name="min">-100</param>
+            <param name="max">100</param>
+        </command_interface>
+        
+        <state_interface name="position">
+        <param name="initial_value">0.0</param> 
+        </state_interface>
+    </joint>
+
+    <joint name="w1_a1">
+        <command_interface name="velocity">
+            <param name="min">-2.5</param>
+            <param name="max">2.5</param>
+        </command_interface>
+        <state_interface name="velocity">
+        <param name="initial_value">0.0</param>
+        </state_interface>
+        
+    </joint>
+    <joint name="w2_a2">
+        <command_interface name="velocity">
+            <param name="min">-2.5</param>
+            <param name="max">2.5</param>
+        </command_interface>
+        <state_interface name="velocity">
+        <param name="initial_value">0.0</param> 
+        </state_interface>
+        
+    </joint>
+    <joint name="w3_a3">
+        <command_interface name="velocity">
+            <param name="min">-2.5</param>
+            <param name="max">2.5</param>
+        </command_interface>
+        <state_interface name="velocity">
+        <param name="initial_value">0.0</param> 
+        </state_interface>
+        
+    </joint>
+    <joint name="w4_a4">
+        <command_interface name="velocity">
+            <param name="min">-2.5</param>
+            <param name="max">2.5</param>
+        </command_interface>
+        <state_interface name="velocity">
+        <param name="initial_value">0.0</param> 
+        </state_interface>
+        
+    </joint>
+</ros2_control>
+
+<gazebo>
+    <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+        <parameters>$(find amr_description)/config/controller.yaml</parameters>
+    </plugin>
+    
+</gazebo>
+</robot>
+
+
+
+
