@@ -27,10 +27,6 @@ setup(
     entry_points={
         'console_scripts': [
             'controller = amr_description.controller:main',
-            'dstination = amr_description.destination:main',
-            'driver = amr_description.driver:main',
-            'sensed_object = amr_description.sensed_object:main',
-            'odom_pub = amr_description.odom_pub:main',
         ],
     },
 )
