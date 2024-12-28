@@ -1,0 +1,36 @@
+from setuptools import setup
+import os
+from glob import glob
+
+package_name = 'amr_description'
+
+setup(
+    name=package_name,
+    version='0.0.0',
+    packages=[package_name],
+    data_files=[
+        ('share/ament_index/resource_index/packages',
+            ['resource/' + package_name]),
+        ('share/' + package_name, ['package.xml']),
+        (os.path.join('share', package_name, 'launch'), glob('launch/*.launch.py')),
+        (os.path.join('share', package_name, 'urdf'), glob('urdf/*')),
+        (os.path.join('share', package_name, 'meshes'), glob('meshes/*')),
+        (os.path.join('share', package_name, 'config'), glob(os.path.join('config/*', '*.yaml')))
+    ],
+    install_requires=['setuptools'],
+    zip_safe=True,
+    maintainer='author',
+    maintainer_email='todo@todo.com',
+    description='The ' + package_name + ' package',
+    license='TODO: License declaration',
+    tests_require=['pytest'],
+    entry_points={
+        'console_scripts': [
+            'controller = amr_description.controller:main',
+            'dstination = amr_description.destination:main',
+            'driver = amr_description.driver:main',
+            'sensed_object = amr_description.sensed_object:main',
+            'odom_pub = amr_description.odom_pub:main',
+        ],
+    },
+)
