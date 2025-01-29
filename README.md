@@ -1,5 +1,7 @@
-# Swerve_robot
-This is my take on creating a controller for 4 wheeled swerve robot
+# Gazebo-Harmonic-Swerve-Robot
+[![swerve-robot-2025-01-29-18-13-48-1.gif](https://i.postimg.cc/sXzpXh25/swerve-robot-2025-01-29-18-13-48-1.gif)](https://github.com/dawan0111/Gazebo-Harmonic-Swerve-Robot)
+
+
 # Swerve Drive Robot ROS2 Package
 
 This repository contains a ROS2 package for the control of a 4-wheeled swerve drive robot. The package includes:
@@ -17,21 +19,21 @@ The ROS2 package provides launch files and nodes to simulate and control a swerv
 1. Ensure you have ROS2 installed on your system. Refer to the [ROS2 installation guide](https://docs.ros.org/en/jazzy/Installation.html) for your platform.
 2. Clone this repository into your ROS2 workspace:
 
-    ```bash
-    cd ~/ros2_ws/src
-    git clone https://github.com/dawan0111/Gazebo-Harmonic-Swerve-Robot.git
-    ```
+```bash
+cd ~/ros2_ws/src
+git clone https://github.com/dawan0111/Gazebo-Harmonic-Swerve-Robot.git
+```
 3. Build the package:
 
-    ```bash
-    cd ~/ros2_ws
-    colcon build
-    ```
+```bash
+cd ~/ros2_ws
+colcon build
+```
 4. Source the workspace:
 
-    ```bash
-    source ~/ros2_ws/install/setup.bash
-    ```
+```bash
+source ~/ros2_ws/install/setup.bash
+```
 
 ## Docker Installation
 ```
@@ -57,23 +59,23 @@ To start the Gazebo simulation environment for the robot, run:
 ros2 launch amr_description gazebo.launch.py
 ```
 
-### 2. Start the Joystick Controller
-
-If you want to control the robot using a joystick, run:
-
-```bash
-ros2 launch amr_description joystick.launch.py
-```
-
-Ensure your joystick is connected and recognized by the system.
-
-### 3. Run the Controller Node
+### 2. Run the Controller Node
 
 To operate the custom controller node for the swerve drive robot, execute:
 
 ```bash
 ros2 run amr_description controller
 ```
+
+### 3. Start the keyboard Controller
+
+If you want to control the robot using a joystick, run:
+
+```bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+```
+
+Ensure your joystick is connected and recognized by the system.
 
 ## File Structure
 
