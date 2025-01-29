@@ -12,14 +12,14 @@ This repository contains a ROS2 package for the control of a 4-wheeled swerve dr
 
 The ROS2 package provides launch files and nodes to simulate and control a swerve drive robot. Below is a step-by-step guide to get started.
 
-## Installation
+## Manual Installation
 
-1. Ensure you have ROS2 installed on your system. Refer to the [ROS2 installation guide](https://docs.ros.org/en/rolling/Installation.html) for your platform.
+1. Ensure you have ROS2 installed on your system. Refer to the [ROS2 installation guide](https://docs.ros.org/en/jazzy/Installation.html) for your platform.
 2. Clone this repository into your ROS2 workspace:
 
     ```bash
     cd ~/ros2_ws/src
-    git clone https://github.com/<your-username>/Swerve_robot.git
+    git clone https://github.com/dawan0111/Gazebo-Harmonic-Swerve-Robot.git
     ```
 3. Build the package:
 
@@ -32,6 +32,20 @@ The ROS2 package provides launch files and nodes to simulate and control a swerv
     ```bash
     source ~/ros2_ws/install/setup.bash
     ```
+
+## Docker Installation
+```
+docker build . -t ros2:gazebo-swerve
+docker run --init -it -d \
+  --runtime=nvidia --gpus 'all,"capabilities=compute,utility,graphics"' \
+  -v /etc/localtime:/etc/localtime:ro \
+  -v /etc/timezone:/etc/timezone:ro \
+  -v /tmp/.X11-unix:/tmp/.X11-unix \
+  -e DISPLAY=$DISPLAY \
+  -e "QT_X11_NO_MITSHM=1" \
+  ros2:gazebo-swerve
+  bash
+```
 
 ## Usage
 

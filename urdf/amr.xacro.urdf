@@ -1,0 +1,482 @@
+<?xml version="1.0" ?>
+<robot name="amr" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find amr_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find amr_description)/urdf/amr.trans" />
+<!-- <xacro:include filename="$(find amr_description)/urdf/amr.gazebo" /> -->
+
+<material name="Red">
+  <color rgba="1 0 0 1"/>
+</material>
+
+<material name="Green">
+  <color rgba="0 1 0 1"/>
+</material>
+
+<material name="Blue">
+  <color rgba="0 0 1 1"/>
+</material>
+
+<material name="Yellow">
+  <color rgba="1 1 0 1"/>
+</material>
+
+<material name="Cyan">
+  <color rgba="0 1 1 1"/>
+</material>
+
+<material name="Magenta">
+  <color rgba="1 0 1 1"/>
+</material>
+
+<material name="White">
+  <color rgba="1 1 1 1"/>
+</material>
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="9.88370881442107e-15 1.585123111746775e-15 0.23509051148364088" rpy="0 0 0"/>
+    <mass value="8.427520916605515"/>
+    <inertia ixx="0.292265" iyy="0.291616" izz="0.580407" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+  
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///ros2_ws/src/amr_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry> 
+    <material name="Red"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///ros2_ws/src/amr_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="assembly_1_1">
+  <inertial>
+    <origin xyz="3.2085445411667024e-14 2.220446049250313e-16 -0.06565912118430478" rpy="0 0 0"/>
+    <mass value="0.7976447623370104"/>
+    <inertia ixx="0.003267" iyy="0.002629" izz="0.001776" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.175 0.2 -0.225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///ros2_ws/src/amr_description/meshes/assembly_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="Yellow"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.175 0.2 -0.225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///ros2_ws/src/amr_description/meshes/assembly_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="assembly_2_1">
+  <inertial>
+    <origin xyz="-3.236300116782331e-14 2.7755575615628914e-17 -0.06565912118430459" rpy="0 0 0"/>
+    <mass value="0.7976447623370104"/>
+    <inertia ixx="0.003267" iyy="0.002629" izz="0.001776" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.175 -0.2 -0.225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///ros2_ws/src/amr_description/meshes/assembly_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="Yellow"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.175 -0.2 -0.225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///ros2_ws/src/amr_description/meshes/assembly_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="assembly_3_1">
+  <inertial>
+    <origin xyz="3.2307490016592055e-14 2.7755575615628914e-17 -0.06565912118430464" rpy="0 0 0"/>
+    <mass value="0.7976447623370104"/>
+    <inertia ixx="0.003267" iyy="0.002629" izz="0.001776" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.175 -0.2 -0.225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///ros2_ws/src/amr_description/meshes/assembly_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="Yellow"/>
+  </visual>
+  <collision>
+    <origin xyz="0.175 -0.2 -0.225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///ros2_ws/src/amr_description/meshes/assembly_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="assembly_4_1">
+  <inertial>
+    <origin xyz="-3.2279734440976426e-14 1.942890293094024e-16 -0.0656591211843047" rpy="0 0 0"/>
+    <mass value="0.7976447623370104"/>
+    <inertia ixx="0.003267" iyy="0.002629" izz="0.001776" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.175 0.2 -0.225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///ros2_ws/src/amr_description/meshes/assembly_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="Yellow"/>
+  </visual>
+  <collision>
+    <origin xyz="0.175 0.2 -0.225" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///ros2_ws/src/amr_description/meshes/assembly_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_1_1">
+  <inertial>
+    <origin xyz="0.0 0.06 1.3877787807814457e-17" rpy="0 0 0"/>
+    <mass value="0.19470083302475816"/>
+    <inertia ixx="0.000148" iyy="0.000228" izz="0.000148" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.175 0.26 -0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///ros2_ws/src/amr_description/meshes/wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.175 0.26 -0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///ros2_ws/src/amr_description/meshes/wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_2_1">
+  <inertial>
+    <origin xyz="0.0 -0.05999999999999994 1.3877787807814457e-17" rpy="0 0 0"/>
+    <mass value="0.19470083302475816"/>
+    <inertia ixx="0.000148" iyy="0.000228" izz="0.000148" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.175 -0.26 -0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///ros2_ws/src/amr_description/meshes/wheel_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.175 -0.26 -0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///ros2_ws/src/amr_description/meshes/wheel_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_3_1">
+  <inertial>
+    <origin xyz="0.0 -0.05999999999999997 6.938893903907228e-18" rpy="0 0 0"/>
+    <mass value="0.19470083302475819"/>
+    <inertia ixx="0.000148" iyy="0.000228" izz="0.000148" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.175 -0.26 -0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///ros2_ws/src/amr_description/meshes/wheel_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.175 -0.26 -0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///ros2_ws/src/amr_description/meshes/wheel_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_4_1">
+  <inertial>
+    <origin xyz="0.0 0.05999999999999994 6.938893903907228e-18" rpy="0 0 0"/>
+    <mass value="0.19470083302475819"/>
+    <inertia ixx="0.000148" iyy="0.000228" izz="0.000148" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.175 0.26 -0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///ros2_ws/src/amr_description/meshes/wheel_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.175 0.26 -0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///ros2_ws/src/amr_description/meshes/wheel_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<!-- <link name="lidar_1">
+  <inertial>
+    <origin xyz="0.0 -5.654319433712919e-18 0.009999999999999953" rpy="0 0 0"/>
+    <mass value="0.10656282280976578"/>
+    <inertia ixx="4.6e-05" iyy="4.6e-05" izz="8.5e-05" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 -0.275" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///ros2_ws/src/amr_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="Blue"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 -0.275" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file:///ros2_ws/src/amr_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link> -->
+
+<joint name="a1_bl" type="continuous">
+  <origin xyz="0.175 -0.2 0.225" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="assembly_1_1"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="a2_bl" type="continuous">
+  <origin xyz="0.175 0.2 0.225" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="assembly_2_1"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="a3_bl" type="continuous">
+  <origin xyz="-0.175 0.2 0.225" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="assembly_3_1"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="a4_bl" type="continuous">
+  <origin xyz="-0.175 -0.2 0.225" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="assembly_4_1"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="w1_a1" type="continuous">
+  <origin xyz="0.0 -0.06 -0.175" rpy="0 0 0"/>
+  <parent link="assembly_1_1"/>
+  <child link="wheel_1_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="w2_a2" type="continuous">
+  <origin xyz="0.0 0.06 -0.175" rpy="0 0 0"/>
+  <parent link="assembly_2_1"/>
+  <child link="wheel_2_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="w3_a3" type="continuous">
+  <origin xyz="0.0 0.06 -0.175" rpy="0 0 0"/>
+  <parent link="assembly_3_1"/>
+  <child link="wheel_3_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="w4_a4" type="continuous">
+  <origin xyz="0.0 -0.06 -0.175" rpy="0 0 0"/>
+  <parent link="assembly_4_1"/>
+  <child link="wheel_4_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<!-- <joint name="l_bl" type="continuous">
+  <origin xyz="0.0 0.0 0.275" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint> -->
+
+    
+<link name="laser_frame">
+  <inertial> 
+    <origin xyz="0.0 -5.654319433712919e-18 0.009999999999999953" rpy="0 0 0"/>
+    <mass value ="0.1"/>
+    <inertia ixx="4.6e-05" iyy="4.6e-05" izz="8.5e-05" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <geometry>
+      <cylinder length="0.04" radius="0.05"/>
+    </geometry>
+    <material name="Blue"/>
+  </visual>
+  <collision>
+    <geometry>
+      <cylinder length="0.04" radius="0.05"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="imu_sensor">
+  <inertial> 
+    <origin xyz="0.0 -5.654319433712919e-18 0.0509999999999999953" rpy="0 0 0"/>
+    <mass value ="0.1"/>
+    <inertia ixx="4.6e-05" iyy="4.6e-05" izz="8.5e-05" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <geometry>
+      <cylinder length="0.04" radius="0.05"/>
+    </geometry>
+    <material name="Red"/>
+  </visual>
+  <collision>
+    <geometry>
+      <cylinder length="0.04" radius="0.05"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="laser_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.275" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="laser_frame"/>  
+</joint>
+
+<joint name="imu_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.275" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="imu_sensor"/>  
+</joint>
+
+<ros2_control name="SwerveControl" type="system">
+    <hardware>
+        <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+    </hardware>
+    <joint name="a1_bl">
+        <command_interface name="position">
+            <param name="min">-100</param>
+            <param name="max">100</param>
+        </command_interface>
+        
+        <state_interface name="position">
+        <param name="initial_value">0.0</param> 
+        </state_interface>
+    </joint>
+    <joint name="a2_bl">
+        <command_interface name="position">
+            <param name="min">-100</param>
+            <param name="max">100</param>
+        </command_interface>
+        
+        <state_interface name="position">
+        <param name="initial_value">0.0</param> 
+        </state_interface>
+    </joint>
+    <joint name="a3_bl">
+        <command_interface name="position">
+            <param name="min">-100</param>
+            <param name="max">100</param>
+        </command_interface>
+        
+        <state_interface name="position">
+        <param name="initial_value">0.0</param> 
+        </state_interface>
+    </joint>
+    <joint name="a4_bl">
+        <command_interface name="position">
+            <param name="min">-100</param>
+            <param name="max">100</param>
+        </command_interface>
+        
+        <state_interface name="position">
+        <param name="initial_value">0.0</param> 
+        </state_interface>
+    </joint>
+
+    <joint name="w1_a1">
+        <command_interface name="velocity">
+            <param name="min">-2.5</param>
+            <param name="max">2.5</param>
+        </command_interface>
+        <state_interface name="velocity">
+        <param name="initial_value">0.0</param>
+        </state_interface>
+        
+    </joint>
+    <joint name="w2_a2">
+        <command_interface name="velocity">
+            <param name="min">-2.5</param>
+            <param name="max">2.5</param>
+        </command_interface>
+        <state_interface name="velocity">
+        <param name="initial_value">0.0</param> 
+        </state_interface>
+        
+    </joint>
+    <joint name="w3_a3">
+        <command_interface name="velocity">
+            <param name="min">-2.5</param>
+            <param name="max">2.5</param>
+        </command_interface>
+        <state_interface name="velocity">
+        <param name="initial_value">0.0</param> 
+        </state_interface>
+        
+    </joint>
+    <joint name="w4_a4">
+        <command_interface name="velocity">
+            <param name="min">-2.5</param>
+            <param name="max">2.5</param>
+        </command_interface>
+        <state_interface name="velocity">
+        <param name="initial_value">0.0</param> 
+        </state_interface>
+    </joint>
+</ros2_control>
+
+<gazebo>
+    <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+        <parameters>$(find amr_description)/config/controller.yaml</parameters>
+    </plugin>
+</gazebo>
+
+<!-- <gazebo reference="imu_sensor">
+  <gravity>true</gravity>
+  <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>25</update_rate>
+      <visualize>true</visualize>
+      <topic>/imu</topic>
+      <plugin filename="libignition-gazebo-imu-system.so" name="ignition::gazebo::systems::Imu">
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+  </sensor>
+</gazebo>
+
+<gazebo>
+  <plugin
+        filename="libignition-gazebo-pose-publisher-system.so"
+        name="ignition::gazebo::systems::PosePublisher">
+    <publish_link_pose>true</publish_link_pose>
+    <publish_sensor_pose>true</publish_sensor_pose>
+    <publish_collision_pose>false</publish_collision_pose>
+    <publish_visual_pose>false</publish_visual_pose>
+    <publish_model_pose>true</publish_model_pose>
+    <publish_nested_model_pose>true</publish_nested_model_pose>
+    <use_pose_vector_msg>true</use_pose_vector_msg>
+    <static_publisher>true</static_publisher>
+    <static_update_frequency>-1</static_update_frequency>
+  </plugin>
+</gazebo> -->
+</robot>
+
